@@ -1,0 +1,153 @@
+<div class="text-center">
+  <h1 class="text-accent-600 m-5 text-4xl font-bold">
+    Eden, an experimental Website.
+  </h1>
+</div>
+
+<div class="mx-auto hidden w-3/6 lg:flex">
+  <div
+    class="m-3 mx-auto flex max-w-sm items-center space-x-4 rounded-xl bg-white p-5 shadow-lg"
+  >
+    <div class="shrink-0">
+      <img class="h-12 w-12" src="./assets/EdEn.png" alt="ChitChat Logo" />
+    </div>
+    <div>
+      <div class="text-xl font-medium text-black">ChitChat</div>
+      <p class="text-secondary-500">You have a new message!</p>
+    </div>
+  </div>
+  <div
+    class="m-3 mx-auto flex max-w-sm items-center space-x-4 rounded-xl bg-white p-5 shadow-lg"
+  >
+    <div class="shrink-0">
+      <img class="h-12 w-12" src="./assets/EdEn.png" alt="ChitChat Logo" />
+    </div>
+    <div>
+      <div class="text-xl font-medium text-black">ChitChat</div>
+      <p class="text-secondary-500">You have a new message!</p>
+    </div>
+  </div>
+</div>
+
+<div class="mx-auto hidden w-3/6 lg:flex">
+  <div
+    class="m-3 mx-auto mr-10 flex max-w-sm items-center space-x-4 rounded-xl bg-white p-5 shadow-lg"
+  >
+    <div class="shrink-0">
+      <img class="h-12 w-12" src="./assets/EdEn.png" alt="ChitChat Logo" />
+    </div>
+    <div>
+      <div class="text-xl font-medium text-black">ChitChat</div>
+      <p class="text-secondary-500">You have a new message!</p>
+    </div>
+  </div>
+  <div
+    class="m-3 mx-auto ml-10 flex max-w-sm items-center space-x-4 rounded-xl bg-white p-5 shadow-lg"
+  >
+    <div class="shrink-0">
+      <img class="h-12 w-12" src="./assets/EdEn.png" alt="ChitChat Logo" />
+    </div>
+    <div>
+      <div class="text-xl font-medium text-black">ChitChat</div>
+      <p class="text-secondary-500">You have a new message!</p>
+    </div>
+  </div>
+</div>
+<div class="flex">
+  <div
+    class="m-3 mx-auto flex max-w-sm items-center space-x-4 rounded-xl bg-white p-5 shadow-lg"
+  >
+    <div class="shrink-0">
+      <img class="h-12 w-12" src="./assets/EdEn.png" alt="ChitChat Logo" />
+    </div>
+    <div>
+      <div class="text-xl font-medium text-black">ChitChat</div>
+      <p class="text-secondary-500">You have a new message!</p>
+    </div>
+  </div>
+</div>
+
+<div class="flex">
+  <div
+    class="bg-secondary-200 m-3 mx-auto max-w-sm space-y-2 rounded-xl px-8 py-8 shadow-lg sm:flex sm:items-center sm:space-x-6 sm:space-y-0 sm:py-4"
+  >
+    <div class="mx-auto space-y-2 text-center sm:text-center">
+      <div class="space-y-0.5">
+        <p class="text-lg font-semibold text-black">{{ textValue() }}</p>
+      </div>
+      <button
+        class="border-primary-200 bg-primary-200 text-primary-600 hover:bg-primary-500 focus:ring-primary-600 rounded-full border px-8 py-2 text-sm font-semibold hover:border-transparent hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2"
+        (click)="click()"
+      >
+        Change Value
+      </button>
+    </div>
+  </div>
+</div>
+
+@if (isLoggedIn()) {
+  <div class="flex">
+    <div
+      class="bg-secondary-200 m-3 mx-auto max-w-sm space-y-2 rounded-xl px-8 py-8 shadow-lg sm:flex sm:items-center sm:space-x-6 sm:space-y-0 sm:py-4"
+    >
+      <div class="mx-auto space-y-2 text-center sm:text-center">
+        <div class="space-y-0.5">
+          <p class="text-lg font-semibold text-black">You are logged in!</p>
+        </div>
+        <button
+          class="border-primary-200 bg-primary-200 text-primary-600 hover:bg-primary-500 focus:ring-primary-600 rounded-full border px-8 py-2 text-sm font-semibold hover:border-transparent hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2"
+          (click)="userProfileState = toggleUserProfileState(); proceed()"
+        >
+          Proceed
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="flex" [@openClose]="userProfileState">
+    <div
+      class="m-3 mx-auto max-w-sm space-y-2 rounded-xl bg-white px-8 py-8 shadow-lg sm:flex sm:items-center sm:space-x-6 sm:space-y-0 sm:py-4"
+    >
+      <img
+        class="mx-auto block h-24 rounded-full sm:mx-0 sm:shrink-0"
+        src="{{ userInfo?.info?.picture }}"
+        alt="Profile Picture"
+      />
+      <div class="space-y-2 text-center sm:text-left">
+        <div class="space-y-0.5">
+          <p class="text-lg font-semibold text-black">
+            {{ userInfo?.info?.name }}
+          </p>
+          <p class="font-medium text-slate-500">Product Engineer</p>
+          <p class="font-medium text-slate-400">
+            {{ userInfo?.info?.email }}
+          </p>
+        </div>
+        <button
+          class="rounded-full border border-purple-200 px-4 py-1 text-sm font-semibold text-purple-600 hover:border-transparent hover:bg-purple-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+          (click)="logout()"
+        >
+          Sign Out
+        </button>
+      </div>
+    </div>
+  </div>
+} @else {
+  <div class="flex">
+    <div
+      class="m-3 mx-auto max-w-sm space-y-2 rounded-xl bg-white px-8 py-8 shadow-lg sm:flex sm:items-center sm:space-x-6 sm:space-y-0 sm:py-4"
+    >
+      <div class="mx-auto space-y-2 text-center sm:text-center">
+        <div class="space-y-0.5">
+          <p class="text-lg font-semibold text-black">Have Google?</p>
+          <p class="font-medium text-slate-500">Login below!</p>
+        </div>
+        <button
+          class="border-primary-200 text-primary-600 hover:bg-primary-500 focus:ring-primary-600 rounded-full border px-8 py-2 text-sm font-semibold hover:border-transparent hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2"
+          (click)="login()"
+        >
+          Login
+        </button>
+      </div>
+    </div>
+  </div>
+}

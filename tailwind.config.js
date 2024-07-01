@@ -1,0 +1,58 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{html,ts}",
+    "./node_modules/flowbite/**/*.js"],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          0: '#ebe6ff',
+          50: '#d8d0f3',
+          100: '#c5bbe7',
+          150: '#b4a8db',
+          200: '#a495d0',
+          300: '#8776b8',
+          400: '#6e5ca0',
+          500: '#5a4788',
+          600: '#473671',
+        },
+        secondary: {
+          0: '#fff5fd',
+          50: '#f3dcef',
+          100: '#e7c5e1',
+          150: '#dbafd4',
+          200: '#cf9ac6',
+          300: '#b777ac',
+          400: '#9f5b94',
+          500: '#87457c',
+          600: '#6f3465',
+        },
+        accent: {
+          0: '#ebfeff',
+          50: '#ccf1f3',
+          100: '#afe4e8',
+          150: '#95d6dc',
+          200: '#7cc8d1',
+          300: '#54adb9',
+          400: '#3693a2',
+          500: '#227b8b',
+          600: '#146474',
+        },
+        black: '#111111',
+        gray: {
+          100: '#F8F8F8',
+          200: '#EAEAEA',
+          300: '#D2D2D2',
+          400: '#A6A6A6',
+          500: '#7F7F7F',
+          600: '#525252',
+          700: '#393939',
+          800: '#262626',
+          900: '#171717',
+        },
+      },
+    },
+  },
+  variants: {},
+  plugins: [require('flowbite/plugin')],
+};

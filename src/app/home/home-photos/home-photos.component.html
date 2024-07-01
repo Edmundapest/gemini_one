@@ -1,0 +1,29 @@
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+  @for (movie of movies; track movie) {
+    <div class="example-box" cdkDrag>{{ movie }}</div>
+  }
+</div>
+
+<div class="p-4 sm:ml-64">
+  <div
+    class="border-secondary-600 rounded-lg border-2 border-dashed p-4 dark:border-gray-700"
+  >
+    <div
+      cdkDropList
+      class="mb-4 grid grid-cols-3 gap-4"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (movie of movies; track movie) {
+        <div
+          cdkDrag
+          cdkDropListOrientation="mixed"
+          class="bg-accent-200 flex h-24 resize items-center justify-center rounded dark:bg-gray-800"
+        >
+          <p class="text-2xl text-gray-400 dark:text-gray-500">
+            <span>{{ movie }}</span>
+          </p>
+        </div>
+      }
+    </div>
+  </div>
+</div>
