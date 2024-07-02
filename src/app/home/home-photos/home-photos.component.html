@@ -6,10 +6,11 @@
 
 <div class="p-4 sm:ml-64">
   <div
-    class="border-secondary-600 rounded-lg border-2 border-dashed p-4 dark:border-gray-700"
+    class="rounded-lg border-2 border-dashed border-secondary-600 p-4 dark:border-gray-700"
   >
     <div
       cdkDropList
+      cdkDropListOrientation="mixed"
       class="mb-4 grid grid-cols-3 gap-4"
       (cdkDropListDropped)="drop($event)"
     >
@@ -17,7 +18,7 @@
         <div
           cdkDrag
           cdkDropListOrientation="mixed"
-          class="bg-accent-200 flex h-24 resize items-center justify-center rounded dark:bg-gray-800"
+          class="flex h-24 resize items-center justify-center rounded bg-accent-200 dark:bg-gray-800"
         >
           <p class="text-2xl text-gray-400 dark:text-gray-500">
             <span>{{ movie }}</span>
