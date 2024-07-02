@@ -1,5 +1,5 @@
 <div class="text-center">
-  <h1 class="text-accent-600 m-5 text-4xl font-bold">
+  <h1 class="m-5 text-4xl font-bold text-accent-600">
     Eden, an experimental Website.
   </h1>
 </div>
@@ -9,7 +9,7 @@
     class="m-3 mx-auto flex max-w-sm items-center space-x-4 rounded-xl bg-white p-5 shadow-lg"
   >
     <div class="shrink-0">
-      <img class="h-12 w-12" src="./assets/EdEn.png" alt="ChitChat Logo" />
+      <img class="h-12 w-12" src="/assets/EdEn.png" alt="ChitChat Logo" />
     </div>
     <div>
       <div class="text-xl font-medium text-black">ChitChat</div>
@@ -69,14 +69,14 @@
 
 <div class="flex">
   <div
-    class="bg-secondary-200 m-3 mx-auto max-w-sm space-y-2 rounded-xl px-8 py-8 shadow-lg sm:flex sm:items-center sm:space-x-6 sm:space-y-0 sm:py-4"
+    class="m-3 mx-auto max-w-sm space-y-2 rounded-xl bg-secondary-200 px-8 py-8 shadow-lg sm:flex sm:items-center sm:space-x-6 sm:space-y-0 sm:py-4"
   >
     <div class="mx-auto space-y-2 text-center sm:text-center">
       <div class="space-y-0.5">
         <p class="text-lg font-semibold text-black">{{ textValue() }}</p>
       </div>
       <button
-        class="border-primary-200 bg-primary-200 text-primary-600 hover:bg-primary-500 focus:ring-primary-600 rounded-full border px-8 py-2 text-sm font-semibold hover:border-transparent hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2"
+        class="rounded-full border border-primary-200 bg-primary-200 px-8 py-2 text-sm font-semibold text-primary-600 hover:border-transparent hover:bg-primary-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2"
         (click)="click()"
       >
         Change Value
@@ -88,14 +88,14 @@
 @if (isLoggedIn()) {
   <div class="flex">
     <div
-      class="bg-secondary-200 m-3 mx-auto max-w-sm space-y-2 rounded-xl px-8 py-8 shadow-lg sm:flex sm:items-center sm:space-x-6 sm:space-y-0 sm:py-4"
+      class="m-3 mx-auto max-w-sm space-y-2 rounded-xl bg-secondary-200 px-8 py-8 shadow-lg sm:flex sm:items-center sm:space-x-6 sm:space-y-0 sm:py-4"
     >
       <div class="mx-auto space-y-2 text-center sm:text-center">
         <div class="space-y-0.5">
           <p class="text-lg font-semibold text-black">You are logged in!</p>
         </div>
         <button
-          class="border-primary-200 bg-primary-200 text-primary-600 hover:bg-primary-500 focus:ring-primary-600 rounded-full border px-8 py-2 text-sm font-semibold hover:border-transparent hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2"
+          class="rounded-full border border-primary-200 bg-primary-200 px-8 py-2 text-sm font-semibold text-primary-600 hover:border-transparent hover:bg-primary-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2"
           (click)="userProfileState = toggleUserProfileState(); proceed()"
         >
           Proceed
@@ -142,7 +142,7 @@
           <p class="font-medium text-slate-500">Login below!</p>
         </div>
         <button
-          class="border-primary-200 text-primary-600 hover:bg-primary-500 focus:ring-primary-600 rounded-full border px-8 py-2 text-sm font-semibold hover:border-transparent hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2"
+          class="rounded-full border border-primary-200 px-8 py-2 text-sm font-semibold text-primary-600 hover:border-transparent hover:bg-primary-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2"
           (click)="login()"
         >
           Login
