@@ -1,6 +1,7 @@
 import { Component, OnInit, effect, signal } from '@angular/core'
 import { ChildrenOutletContexts, Router, RouterOutlet } from '@angular/router'
 import { GoogleApiService, UserInfo } from '../google-api.service'
+import { environment } from '../../../environment'
 import {
   animate,
   animateChild,
@@ -86,6 +87,7 @@ export class LoginComponent {
   //userInfo = signal<UserInfo | null>(null)
   protected userProfileState: 'left' | 'right' = 'right'
   textValue = signal('Debug')
+  public environment = environment
 
   constructor(
     private readonly googleApi: GoogleApiService,
