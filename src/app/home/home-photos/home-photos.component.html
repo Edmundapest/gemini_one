@@ -8,15 +8,17 @@
       class="mb-4 grid grid-cols-3 gap-4"
       (cdkDropListDropped)="drop($event)"
     >
-      @for (movie of movies; track movie) {
+      @for (photo of photos(); track photo.id) {
         <div
           cdkDrag
           cdkDropListOrientation="mixed"
-          class="flex h-24 resize items-center justify-center rounded bg-accent-200 dark:bg-gray-800"
+          class="flex h-60 resize items-center justify-center rounded bg-accent-200 dark:bg-gray-800"
+          [style.backgroundImage]="'url(' + photo.baseUrl + ')'"
         >
+          <!--
           <p class="text-2xl text-gray-400 dark:text-gray-500">
-            <span>{{ movie }}</span>
-          </p>
+            <span>{{ photo.filename }}</span>
+          </p>-->
         </div>
       }
     </div>

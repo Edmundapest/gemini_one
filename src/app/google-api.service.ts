@@ -68,4 +68,8 @@ export class GoogleApiService {
     this.oAuthService.logOut()
     //this.userProfileSubject.set(undefined)
   }
+
+  getAccessToken() {
+    return this.oAuthService.getAccessToken()
+  }
 }

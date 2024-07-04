@@ -1,7 +1,7 @@
 import { Component, OnInit, effect, signal } from '@angular/core'
-import { ChildrenOutletContexts, Router, RouterOutlet } from '@angular/router'
 import { GoogleApiService, UserInfo } from '../google-api.service'
 import { environment } from '../../../environment'
+import { ChildrenOutletContexts, Router, RouterOutlet } from '@angular/router'
 import {
   animate,
   animateChild,
